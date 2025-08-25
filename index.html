@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      margin-top: 50px;
+      background-color: rgb(233, 233, 198);
+      font-family: Arial, sans-serif;
+    }
+    .main {
+      width: 475px;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+      background-color: rgb(245, 201, 148);
+    }
+    h1 { text-align: center; margin-bottom: 20px; }
+    #result {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      width: 100%;
+      height: 70px;
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+      padding: 10px;
+      border-radius: 10px;
+      border: none;
+      outline: none;
+      background: #fffbea;
+      box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+    }
+    button {
+      height: 80px;
+      font-size: 1.5rem;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      transition: 0.2s;
+      background-color: #fdfbd4;
+    }
+    button:hover { background-color: #f7e49a; transform: scale(1.05); }
+    button:active { transform: scale(0.95); }
+    .equal { background-color: #ff9f43; color: white; font-weight: bold; }
+    .equal:hover { background-color: #e67e22; }
+    .clear { background-color: #ff6b6b; color: white; }
+    .clear:hover { background-color: #e84141; }
+  </style>
+</head>
+<body>
+  <div class="main">
+    <h1>Calculator</h1>
+    <input id="result" type="text" placeholder="0" readonly>
+    <div class="buttons">
+      <button onclick="displayNumber(7)">7</button>
+      <button onclick="displayNumber(8)">8</button>
+      <button onclick="displayNumber(9)">9</button>
+      <button onclick="displayNumber('*')">×</button>
+      <button class="clear" onclick="lastDigit()">C</button>
+
+      <button onclick="displayNumber(4)">4</button>
+      <button onclick="displayNumber(5)">5</button>
+      <button onclick="displayNumber(6)">6</button>
+      <button onclick="displayNumber('-')">−</button>
+      <button class="clear" onclick="clearText()">AC</button>
+
+      <button onclick="displayNumber(1)">1</button>
+      <button onclick="displayNumber(2)">2</button>
+      <button onclick="displayNumber(3)">3</button>
+      <button onclick="displayNumber('+')">+</button>
+      <button onclick="displayNumber('%')">%</button>
+
+      <button onclick="displayNumber(0)">0</button>
+      <button onclick="displayNumber('00')">00</button>
+      <button onclick="displayNumber('.')">.</button>
+      <button onclick="displayNumber('/')">÷</button>
+      <button class="equal" onclick="calculation()">=</button>
+    </div>
+  </div>
+
+  <!-- Load script at the end -->
+  <script src="script.js"></script>
+</body>
+</html>
